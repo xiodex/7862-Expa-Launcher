@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDash>
+	
+    <groups>
+	
+		<!-- Tyre -->
+		<group name="TMPS">
+    		<gauge name="TMPS PAD"></gauge>
+			<gauge name="TMPS CAR"></gauge>
+			<gauge name="FL Connect"></gauge>
+			<gauge name="FL Low Bat"></gauge>
+			<gauge name="FL Pressure Unit"></gauge>
+			<gauge name="FL Temperature Unit"></gauge>
+			<gauge name="FL Temperature Value"></gauge>
+			<gauge name="FL Pressure Value"></gauge>
+			
+			<gauge name="FR Connect"></gauge>
+			<gauge name="FR Low Bat"></gauge>
+			<gauge name="FR Pressure Unit"></gauge>
+			<gauge name="FR Temperature Unit"></gauge>
+			<gauge name="FR Temperature Value"></gauge>
+			<gauge name="FR Pressure Value"></gauge>
+			
+			<gauge name="RL Connect"></gauge>
+			<gauge name="RL Low Bat"></gauge>
+			<gauge name="RL Pressure Unit"></gauge>
+			<gauge name="RL Temperature Unit"></gauge>
+			<gauge name="RL Temperature Value"></gauge>
+			<gauge name="RL Pressure Value"></gauge>
+			
+			<gauge name="RR Connect"></gauge>
+			<gauge name="RR Low Bat"></gauge>
+			<gauge name="RR Pressure Unit"></gauge>
+			<gauge name="RR Temperature Unit"></gauge>
+			<gauge name="RR Temperature Value"></gauge>
+			<gauge name="RR Pressure Value"></gauge>			
+			
+        </group>
+		
+		
+		
+    </groups>
+
+    <animations>
+		
+		<!-- TMPS -->		
+		<animation name="TMPS_Show" type="fade" group="TMPS" end="1.0" duration="1" delay="0.0" easing="QuadOut"></animation>
+		<animation name="TMPS_Hide" type="fade" group="TMPS" end="0.0" duration="1" delay="0.0" easing="QuadIn"></animation>
+			
+    </animations>
+
+    <triggers>
+
+	<!-- name="name of the trigger" -->
+	<!-- condition="larger(default)|smaller|equal" -->
+	<!-- variable="name of the variable, only dummy variables and dummy timers are supported" -->
+	<!-- tolerance="value to trigger on" for example, if condition="smaller" and tolerance="1", trigger will fire if variable is less than 1  -->
+	<!-- reset="value to reset (allow trigger to fire again)" this is an inverse of condition, trigger is reset if variable is larger than 1 -->
+	<!-- cooldown="seconds until this trigger can fire again" -->
+	
+        
+					
+	<!-- Tyre low speed (Dummy 18)-->	
+		<trigger name="TMPS Hide" condition="equal" variable="Dummy variable 6" tolerance="0.00" reset="0.00" cooldown="1.00">
+		<actions><action name="TMPS_Hide"></action></actions></trigger>
+		<trigger name="TMPS Show" condition="equal" variable="Dummy variable 6" tolerance="1.00" reset="0.00" cooldown="1.00">
+		<actions><action name="TMPS_Show"></action></actions></trigger>			
+		
+		
+    </triggers>
+
+</RealDash>
